@@ -1,0 +1,19 @@
+Début
+  Définir un dictionnaire prixProduits avec :
+    "tomates" -> 2
+    "lait" -> 1.5
+    "oeufs" -> 0.3
+
+  Lire nomClient
+  Lire produitChoisi
+  Lire quantite
+
+  Si quantite <= 0 Alors
+    Afficher "Quantité invalide"
+    Fin
+
+  prixUnitaire <- prixProduits[produitChoisi]
+  prixTotal <- prixUnitaire * quantite
+
+  Afficher nomClient + ", le prix total pour votre commande de " + quantite + " " + produitChoisi + " est de " + prixTotal + " DT."
+Fin

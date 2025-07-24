@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ferme Korba - Produits & Animaux</title>
+  <meta name="description" content="Produits naturels et animaux à vendre depuis la Ferme Korba à Nabeul." />
+  <meta name="keywords" content="Ferme, Korba, produits naturels, animaux, vente, bio" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Ferme Korba</h1>
+    <nav>
+      <ul>
+        <li><a href="#presentation">Présentation</a></li>
+        <li><a href="#produits">Produits</a></li>
+        <li><a href="#animaux">Animaux</a></li>
+        <li><a href="#commande">Commande</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="presentation">
+      <div class="presentation-contenu">
+        <div class="texte">
+          <h2>Bienvenue à la Ferme Korba</h2>
+          <p>Nous vous proposons des produits naturels, cultivés localement avec soin, ainsi que des animaux élevés dans des conditions saines et respectueuses.</p>
+        </div>
+        <div class="image">
+          <img src="../Nouveau dossier (2)/firma.jpg" alt="Ferme Korba - Vue générale" />
+        </div>
+      </div>
+    </section>
+
+    <section id="produits">
+      <h2>Nos Produits</h2>
+      <div class="grille">
+        <div class="carte">
+          <img src="../Nouveau dossier (2)/radis.jpg" alt="Radis frais" />
+          <p>Radis - 1.200 TND / botte</p>
+        </div>
+        <div class="carte">
+          <img src="../Nouveau dossier (2)/54ar.jpg" alt="Laitue verte" />
+          <p>Laitue - 1.500 TND / pièce</p>
+        </div>
+        <div class="carte">
+          <img src="../Nouveau dossier (2)/34am.jpg" alt="Œufs fermiers" />
+          <p>Œufs - 0.900 TND / unité</p>
+        </div>
+        <div class="carte">
+          <img src="../Nouveau dossier (2)/WhatsApp Image 2025-07-23 à 00.03.55_7a9b566b.jpg" alt="Fenouil bio" />
+          <p>Fenouil - 1.700 TND / pièce</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="animaux">
+      <h2>Animaux à vendre</h2>
+      <div class="grille">
+        <div class="carte">
+          <img src="../Nouveau dossier (2)/djej.jpg" alt="Poule pondeuse" />
+          <p>Poule - 12.000 TND</p>
+        </div>
+        <div class="carte">
+          <img src="../Nouveau dossier (2)/fleles.jpg" alt="Poussin jeune" />
+          <p>Poussin - 5.000 TND</p>
+        </div>
+        <div class="carte">
+          <img src="../Nouveau dossier (2)/3lelech.jpg" alt="Mouton adulte" />
+          <p>Mouton - 450.000 TND</p>
+        </div>
+        <div class="carte">
+          <img src="../Nouveau dossier (2)/7sonna.jpg" alt="Cheval blanc (non disponible à la vente)" />
+          <p>Chevaux - Non disponible à la vente</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="commande">
+      <h2>Commander un produit ou un animal</h2>
+      <form id="formCommande">
+        <label for="nom">Votre nom :</label>
+        <input type="text" id="nom" required />
+
+        <label for="produit">Choix :</label>
+        <select id="produit">
+          <option value="radis">Radis - 1.200 TND</option>
+          <option value="laitue">Laitue - 1.500 TND</option>
+          <option value="oeufs">Œufs - 0.900 TND</option>
+          <option value="fenouil">Fenouil - 1.700 TND</option>
+          <option value="poule">Poule - 12.000 TND</option>
+          <option value="poussin">Poussin - 5.000 TND</option>
+          <option value="mouton">Mouton - 450.000 TND</option>
+        </select>
+
+        <label for="quantite">Quantité :</label>
+        <input type="number" id="quantite" min="1" required />
+
+        <button type="button" onclick="calculerPrix()">Calculer le prix</button>
+      </form>
+      <p id="resultat"></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      Ferme Korba - Diar El Hojjej, Korba - Nabeul<br />
+      Téléphone : 41019000
+    </p>
+  </footer>
+
+  <script>
+    function calculerPrix() {
+      const produit = document.getElementById("produit").value;
+      const quantite = parseInt(document.getElementById("quantite").value);
+
+      const prixUnitaire = {
+        radis: 1.2,
+        laitue: 1.5,
+        oeufs: 0.9,
+        fenouil: 1.7,
+        poule: 12,
+        poussin: 5,
+        mouton: 450
+      };
+
+      const prix = prixUnitaire[produit] * quantite;
+      document.getElementById("resultat").textContent =
+        "Prix total : " + prix.toFixed(3) + " TND";
+    }
+  </script>
+</body>
+</html>
